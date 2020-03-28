@@ -1,0 +1,35 @@
+
+kubectl expose deployment hello-minikube --type=NodePort
+
+service cmd 
+minikube service <service name> --url
+
+run cmd
+kubectl run nginx --image=nginx
+
+replicaset cmd
+kubectl delete replicaset <name of replicaset> also delete all underlying PODs
+kubectl replace -f <name file>.yml
+kubectl scale - replicas=<number of replicas> <name file>.yml 
+
+delete cmd 
+kubectl delete <pods|replicaset|deployment|service> <name>
+
+create cmd
+kubectl create -f <name file>.yml |--record
+
+update cmd
+kubectl apply -f <file name>.yml
+kubectl set <property> <pods|replicaset|deployment|service>/<property name> <new value of the property>
+
+get cmd
+kubectl get <pods|replicaset|deployment|service>
+kubectl get all
+
+status cmd
+kubectl rollout status deployment/<name of the deployment>
+kubectl rollout hystory deployment/<name of the deployment>
+
+rollback cmd
+kubectl rollout undo deployment/<property name>
+
